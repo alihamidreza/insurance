@@ -6,11 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8">
     <link rel="icon" href="../../../../favicon.ico">
 
     <title>پنل مدیریت</title>
     <link rel="stylesheet" href="/admin/css/panel.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/iranSans.css">
+    <style>
+        .page-break {
+            page-break-after: always;
+        }
+    </style>
 </head>
 
 <body>

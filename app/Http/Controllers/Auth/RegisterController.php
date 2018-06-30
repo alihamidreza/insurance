@@ -54,6 +54,7 @@ class RegisterController extends Controller
             'phonenumber' => 'required|integer|min:11',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'shenasname' => 'required|integer',
         ]);
     }
 
@@ -65,12 +66,21 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+
+        $user = User::create([
             'name' => $data['name'],
             'family' => $data['family'],
             'phonenumber' => $data['phonenumber'],
             'email' => $data['email'],
+            'shenasname' => $data['shenasname'],
             'password' => Hash::make($data['password']),
         ]);
+
+        if (isset($data['insurance'])){
+            $user->insurances()->sync($data['insurance']);
+            return $user;
+        }
+
+        return $user;
     }
 }

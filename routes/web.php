@@ -11,18 +11,33 @@
 |
 */
 
+/////// main ///////
 Route::get('/', function () {
+
     return view('index');
 });
-
+////////////////////////////////////////////////////
+////////////////// ADMIN //////////////////////////
+/////////////////////////////////////////////////
 Route::group(['namespace' => 'Admin' , 'prefix' => 'panel' , 'middleware' => 'admin'] , function (){
     $this->get('/' , function (){
-        return view('admin.index');
+        $users = \App\User::latest()->paginate(20);
+        return view('admin.index' , compact('users'));
+    });
+    $this->get('/pdf' , function (){
+        $users = \App\User::latest()->get();
+        $pdf = PDF::loadView('admin.all', compact('users'));
+        return $pdf->download('users.pdf');
+    });
+    $this->get('/all' , function (){
+        $users = \App\User::latest()->get();
+        return view('admin.all' , compact('users'));
     });
     $this->resource('users' , 'UserController');
     $this->resource('insurances' , 'insuranceController');
 });
 
+///// auth ///////
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
 $this->post('login', 'Auth\LoginController@login');
 $this->get('logout', 'Auth\LoginController@logout')->name('logout');

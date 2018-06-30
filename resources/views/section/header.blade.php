@@ -46,11 +46,15 @@
             </li>
             <li><a href="#">درباره ما</a></li>
             <li><a href="#">ارتباط با ما</a></li>
+            <li><a href="#" class="btn btn-outline-dark btn-sm">اضافه کردن بیمه</a></li>
             @if(! auth()->check())
                 <li><a href="/register">ثبت نام</a></li>
                 <li><a href="/login">ورود</a></li>
             @else
                 <li><a href="/logout">خروج</a></li>
+                @if(auth()->user()->level == 'admin')
+                    <li><a href="/panel">ورود به پنل مدیریت</a></li>
+                @endif
             @endif
         </ul>
 

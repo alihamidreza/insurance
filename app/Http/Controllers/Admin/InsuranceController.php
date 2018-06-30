@@ -37,7 +37,12 @@ class InsuranceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate(request() , [
+           'name' => 'required',
+            'number' => 'required|integer'
+        ]);
+        Insurance::create($request->all());
+        return redirect('/panel/insurances');
     }
 
     /**
@@ -59,7 +64,7 @@ class InsuranceController extends Controller
      */
     public function edit(Insurance $insurance)
     {
-        //
+        return view('admin.insurances.edit' , compact('insurance'));
     }
 
     /**
@@ -71,7 +76,12 @@ class InsuranceController extends Controller
      */
     public function update(Request $request, Insurance $insurance)
     {
-        //
+        $this->validate(request() , [
+            'name' => 'required',
+            'number' => 'required|integer'
+        ]);
+        $insurance->update($request->all());
+        return redirect('panel/insurances');
     }
 
     /**
@@ -82,6 +92,7 @@ class InsuranceController extends Controller
      */
     public function destroy(Insurance $insurance)
     {
-        //
+        $insurance->delete();
+        return redirect('panel/insurances');
     }
 }

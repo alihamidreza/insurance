@@ -1,15 +1,9 @@
-@extends('admin.master')
+@extends('admin.pdf')
 
 @section('content')
-    <br>
-        <div class="btn btn-group">
-            <a href="/panel/pdf" class="btn btn-sm btn-secondary"><i class="fa fa-download"></i>  PDF دانلود </a>
-            <a href="/panel/all" class="btn btn-sm btn-info"><i class="fa fa-print"></i> Print</a>
-        </div>
-    <hr>
     <div class="page-break">
         <table class="table table-bordered">
-            <thead class="thead-light">
+            <thead class="thead-light" style="background-color: #cccccc">
             <tr>
                 <th scope="col">نام</th>
                 <th scope="col">نام خانوادگی</th>
@@ -37,5 +31,4 @@
             </tbody>
         </table>
     </div>
-    {{ $users->render() }}
 @endsection

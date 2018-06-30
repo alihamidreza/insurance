@@ -318,3 +318,7 @@ hr{
 /*.searchform{*/
 	/*right:115px;*/
 /*}*/
+.logoarea ul li:hover a {
+	color: #6B949E;
+	margin: 0 !important;
+}

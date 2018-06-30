@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('family');
             $table->integer('phonenumber');
             $table->string('level')->default('user');
+            $table->integer('shenasname');
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();

@@ -3,7 +3,7 @@
     <div class="sidebar-sticky">
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link active" href="/panel">
                     <span data-feather="home" class="fa fa-home"></span>
                     صفحه اصلی <span class="sr-only">(current)</span>
                 </a>

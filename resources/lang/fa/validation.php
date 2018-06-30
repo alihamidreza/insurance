@@ -139,6 +139,7 @@ return array(
         "writer" => "نویسنده",
         "category_id" => "دسته بندی",
         "phonenumber" => "شماره تلفن",
-        "insurance" => "بیمه"
+        "insurance" => "بیمه",
+        "shenasname" => "شماره شناسنامه",
     ),
 );
