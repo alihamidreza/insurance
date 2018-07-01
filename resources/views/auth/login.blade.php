@@ -5,10 +5,10 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header position-relative"><span class="float-right">{{ __('ورود') }}</span></div>
+                    <div class="card col-md-12">
+                        <div class="card-header row position-relative"><span class="float-right">{{ __('ورود') }}</span></div>
 
-                        <div class="card-body">
+                        <div class="card-body row">
                             <form method="POST" action="{{ route('login') }}" aria-label="{{ __('ورود') }}">
                                 @csrf
 

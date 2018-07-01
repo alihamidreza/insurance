@@ -36,6 +36,9 @@ Route::group(['namespace' => 'Admin' , 'prefix' => 'panel' , 'middleware' => 'ad
     $this->resource('users' , 'UserController');
     $this->resource('insurances' , 'insuranceController');
 });
+/////////////// INDEX /////////
+Route::get('/addInsurance' , 'InsuranceController@index');
+Route::patch('/addInsurance' , 'InsuranceController@update');
 
 ///// auth ///////
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');

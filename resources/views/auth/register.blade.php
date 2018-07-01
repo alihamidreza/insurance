@@ -5,8 +5,8 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8">
-                    <div class="card">
-                        <div class="card-header position-relative"><span class="float-right">{{ __('ثبت نام:') }}</span></div>
+                    <div class="card col-md-12">
+                        <div class="card-header row position-relative"><span class="float-right">{{ __('ثبت نام:') }}</span></div>
 
                         <div class="card-body">
                             <form method="POST" action="{{ route('register') }}" aria-label="{{ __('ثبت نام:') }}">
@@ -16,7 +16,7 @@
                                     <label for="name"
                                            class="col-md-4 col-form-label text-md-right">{{ __('نام:') }}</label>
 
-                                    <div class="">
+                                    <div class="row">
                                         <input id="name" type="text"
                                                class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}"
                                                name="name" value="{{ old('name') }}" required autofocus>
@@ -33,7 +33,7 @@
                                     <label for="family"
                                            class="col-md-4 col-form-label text-md-right">{{ __('نام خانوادگی:') }}</label>
 
-                                    <div class="">
+                                    <div class="row">
                                         <input id="family" type="text"
                                                class="form-control{{ $errors->has('family') ? ' is-invalid' : '' }}"
                                                name="family" value="{{ old('family') }}" required autofocus>
@@ -50,7 +50,7 @@
                                     <label for="phonenumber"
                                            class="col-md-4 col-form-label text-md-right">{{ __('شماره تلفن:') }}</label>
 
-                                    <div class="">
+                                    <div class="row">
                                         <input id="phonenumber" type="number"
                                                class="form-control{{ $errors->has('phonenumber') ? ' is-invalid' : '' }}"
                                                name="phonenumber" value="{{ old('phonenumber') }}" required autofocus>
@@ -66,7 +66,7 @@
                                     <label for="email"
                                            class="col-md-4 col-form-label text-md-right">{{ __('آدرس ایمیل:') }}</label>
 
-                                    <div class="">
+                                    <div class="row">
                                         <input id="email" type="email"
                                                class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
                                                name="email" value="{{ old('email') }}" required>
@@ -83,7 +83,7 @@
                                     <label for="shenasname"
                                            class="col-md-4 col-form-label text-md-right">{{ __('شماره شناسنامه:') }}</label>
 
-                                    <div class="">
+                                    <div class="row">
                                         <input id="shenasname" type="number"
                                                class="form-control{{ $errors->has('shenasname') ? ' is-invalid' : '' }}"
                                                name="shenasname" value="{{ old('shenasname') }}" required>
@@ -101,7 +101,7 @@
                                     <label for="password"
                                            class="col-md-4 col-form-label text-md-right">{{ __('رمز عبور:') }}</label>
 
-                                    <div class="">
+                                    <div class="row">
                                         <input id="password" type="password"
                                                class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}"
                                                name="password" required>
@@ -118,7 +118,7 @@
                                     <label for="password-confirm"
                                            class="col-md-4 col-form-label text-md-right">{{ __('تکرار رمز عبور:') }}</label>
 
-                                    <div class="">
+                                    <div class="row">
                                         <input id="password-confirm" type="password" class="form-control"
                                                name="password_confirmation" required>
                                     </div>
@@ -127,7 +127,7 @@
                                     <label for="password-confirm"
                                            class="col-md-4 col-form-label text-md-right">{{ __('بیمه:') }}</label>
 
-                                    <div class="">
+                                    <div class="row">
                                         <select name="insurance[]" id="insurance" class="form-control" multiple>
                                             @foreach($insurances as $insurance)
                                                 <option value="{{ $insurance->id }}">{{ $insurance->name }}</option>
