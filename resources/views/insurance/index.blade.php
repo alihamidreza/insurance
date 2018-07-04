@@ -29,17 +29,58 @@
                             <div class="row bg-light" style="height: 1px;"></div>
                             <br>
                             <div class="form-group">
-                                <form action="/addInsurance" method="post">
+                                @if(count($errors) > 0)
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                                @if(session('noPrice'))
+                                    <div class="alert alert-danger">
+                                        {{ session('noPrice') }}
+                                    </div>
+                                @endif
+
+                                @if(session('failed'))
+                                    <div class="alert alert-danger">
+                                        {{ session('failed') }}
+                                    </div>
+                                @endif
+
+                                @if(session('cancel'))
+                                    <div class="alert alert-warning">
+                                        {{ session('cancel') }}
+                                    </div>
+                                @endif
+
+                                @if(session('exist'))
+                                    <div class="alert alert-warning">
+                                        {{ session('exist') }}
+                                    </div>
+                                @endif
+
+                                @if(session('success'))
+                                    <div class="alert alert-success">
+                                        {{ session('success') }}
+                                    </div>
+                                @endif
+
+                                <form action="/insurance/payment" method="post">
                                     {{ csrf_field() }}
-                                    {{ method_field('PATCH') }}
                                     <label for="insurance">اضافه کردن بیمه نامه:</label>
-                                    <select name="insurance[]" id="insurance" class="form-control" multiple>
+                                    <select name="insurance" id="insurance" class="form-control">
+                                        <option value="" selected disabled>بیمه مورد نظر را انتخاب کنید</option>
                                         @foreach($insurances as $insurance)
-                                            <option value="{{ $insurance->id }}" name="incop">{{ $insurance->name }}</option>
+                                            <option value="{{ $insurance->id }}" name="incop">  {{ $insurance->name }}
+                                                | {{ $insurance->price }} تومان
+                                            </option>
                                         @endforeach
                                     </select>
                                     <br>
-                                    <button type="submit" class="btn btn-sm btn-success">اضافه کردن</button>
+                                    <button type="submit" class="btn btn-sm btn-success">خرید بیمه نامه</button>
                                 </form>
                             </div>
                         </div>
@@ -69,5 +110,4 @@
         </main>
 
     @endif
-
 @endsection

@@ -54,7 +54,7 @@
                                         <input id="phonenumber" type="number"
                                                class="form-control{{ $errors->has('phonenumber') ? ' is-invalid' : '' }}"
                                                name="phonenumber" value="{{ old('phonenumber') }}" required autofocus>
-
+                                        <small class="form-text text-muted">شماره تلفن را بدون صفر وارد کنید.</small>
                                         @if ($errors->has('phonenumber'))
                                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('phonenumber') }}</strong>
@@ -121,18 +121,6 @@
                                     <div class="row">
                                         <input id="password-confirm" type="password" class="form-control"
                                                name="password_confirmation" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="password-confirm"
-                                           class="col-md-4 col-form-label text-md-right">{{ __('بیمه:') }}</label>
-
-                                    <div class="row">
-                                        <select name="insurance[]" id="insurance" class="form-control" multiple>
-                                            @foreach($insurances as $insurance)
-                                                <option value="{{ $insurance->id }}">{{ $insurance->name }}</option>
-                                            @endforeach
-                                        </select>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-0">

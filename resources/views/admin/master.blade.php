@@ -12,8 +12,11 @@
 
     <title>پنل مدیریت</title>
     <link rel="stylesheet" href="/admin/css/panel.css">
+    <link rel="stylesheet" href="/admin/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/admin/css/admin.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/iranSans.css">
+
     <style>
         .page-break {
             page-break-after: always;

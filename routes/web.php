@@ -33,12 +33,24 @@ Route::group(['namespace' => 'Admin' , 'prefix' => 'panel' , 'middleware' => 'ad
         $users = \App\User::latest()->get();
         return view('admin.all' , compact('users'));
     });
+
+    $this->get('/downloadInsurance' , function (){
+        $insurances = \App\Insurance::latest()->get();
+        return view('admin.insurances.insurances' , compact('insurances'));
+    });
+
     $this->resource('users' , 'UserController');
     $this->resource('insurances' , 'insuranceController');
 });
 /////////////// INDEX /////////
 Route::get('/addInsurance' , 'InsuranceController@index');
 Route::patch('/addInsurance' , 'InsuranceController@update');
+
+
+////// Payment //////
+Route::post('/insurance/payment' , 'InsuranceController@payment');
+Route::get('/insurance/payment/checker' , 'InsuranceController@checker');
+/////
 
 ///// auth ///////
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');

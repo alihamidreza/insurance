@@ -76,11 +76,6 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-        if (isset($data['insurance'])){
-            $user->insurances()->sync($data['insurance']);
-            return $user;
-        }
-
         return $user;
     }
 }

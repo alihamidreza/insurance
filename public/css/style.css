@@ -322,3 +322,8 @@ hr{
 	color: #6B949E;
 	margin: 0 !important;
 }
+.addInsurance:hover{
+	color: #000 !important;
+	border-radius: 50px !important;
+	background: #fff !important;
+}

@@ -16,7 +16,17 @@ class CreateInsurancesTable extends Migration
         Schema::create('insurances', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('number');
+            $table->string('nameCreator');
+            $table->string('familyCreator');
+            $table->string('typeCar');
+            $table->string('nameCar');
+            $table->string('modelCar');
+            $table->integer('createdYear');
+            $table->integer('number');
+            $table->integer('VIN');
+            $table->date('startInsurance');
+            $table->date('endInsurance');
+            $table->integer('price');
             $table->timestamps();
         });
 

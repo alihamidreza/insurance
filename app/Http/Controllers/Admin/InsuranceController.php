@@ -39,7 +39,17 @@ class InsuranceController extends Controller
     {
         $this->validate(request() , [
            'name' => 'required',
-            'number' => 'required|integer'
+           'nameCreator' => 'required',
+           'familyCreator' => 'required',
+           'typeCar' => 'required',
+           'nameCar' => 'required',
+           'modelCar' => 'required',
+           'createdYear' => 'required|integer',
+           'number' => 'required|integer',
+           'VIN' => 'required|integer',
+           'startInsurance' => 'required',
+           'endInsurance' => 'required',
+           'price' => 'required|integer'
         ]);
         Insurance::create($request->all());
         return redirect('/panel/insurances');
@@ -78,7 +88,17 @@ class InsuranceController extends Controller
     {
         $this->validate(request() , [
             'name' => 'required',
-            'number' => 'required|integer'
+            'nameCreator' => 'required',
+            'familyCreator' => 'required',
+            'typeCar' => 'required',
+            'nameCar' => 'required',
+            'modelCar' => 'required',
+            'createdYear' => 'required|integer',
+            'number' => 'required|integer',
+            'VIN' => 'required|integer',
+            'startInsurance' => 'required',
+            'endInsurance' => 'required',
+            'price' => 'required|integer'
         ]);
         $insurance->update($request->all());
         return redirect('panel/insurances');
